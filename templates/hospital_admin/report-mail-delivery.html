@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load static %}
+
+
+<h2>Dear Patient {{ values.patient_name }},</h2>
+
+<p>Your Report ID: {{ values.report_id }} has been delivered.</p>
+
+<p>Please collect your report by {{ values.delivery_date }}.</p>
+
+<p>{% trans 'Feel free to contact us for any inquiries.' %}</p>
+
+<p>{% trans 'Sincerely,' %}</p>
+<p>{% trans 'Admin' %}</p>
+

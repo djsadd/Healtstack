@@ -1,0 +1,286 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <!-- doccure/booking-success.html  30 Nov 2019 04:12:16 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>{% trans 'HealthStack' %}</title>
+
+    <!-- Favicons -->
+    <link
+      type="image/x-icon"
+      href="{% static 'HealthStack-System/images/Normal/favicon.png' %}"
+      rel="icon"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'HealthStack-System/css/Normal/bootstrap.min.css' %}"
+    />
+
+    <!-- Fontawesome CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'HealthStack-System/plugins/Normal/fontawesome/css/fontawesome.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'HealthStack-System/plugins/Normal/fontawesome/css/all.min.css' %}"
+    />
+
+    <!-- Main CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'HealthStack-System/css/Normal/style.css' %}"
+    />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <header class="header">
+        <nav class="navbar navbar-expand-lg header-nav">
+          <div class="navbar-header">
+            <a id="mobile_btn" href="javascript:void(0);">
+              <span class="bar-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </a>
+            <a href="{% url 'hospital_home'%}" class="navbar-brand logo">
+              <img
+                src="{% static 'HealthStack-System/images/Normal/logo.jpg' %}"
+                class="img-fluid"
+                alt="Logo"
+              />
+            </a>
+          </div>
+          <div class="main-menu-wrapper">
+            <div class="menu-header">
+              <a href="{% url 'hospital_home'%}" class="menu-logo">
+                <img
+                  src="{% static 'HealthStack-System/images/Normal/logo.jpg' %}"
+                  class="img-fluid"
+                  alt="Logo"
+                />
+              </a>
+              <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                <i class="fas fa-times"></i>
+              </a>
+            </div>
+            <ul class="main-nav">
+              <li>
+                <a href="{% url 'hospital_home'%}">{% trans 'Home' %}</a>
+              </li>
+              <li class="has-submenu active">
+                <a href="#">{% trans 'Doctors' %}<i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                  <li><a href="#">{% trans 'Doctor Dashboard' %}</a></li>
+                  <li><a href="{% url 'appointments'%}">{% trans 'Appointments' %}</a></li>
+                  <li>
+                    <a href="{% url 'schedule-timings'%}">{% trans 'Schedule Timing' %}</a>
+                  </li>
+                  <li><a href="{% url 'my-patients'%}">{% trans 'Patients List' %}</a></li>
+                  <li><a href="#">{% trans 'Patients Profile' %}</a></li>
+                  <!-- <li><a href="#">{% trans 'Chat' %}</a></li>
+						  <li><a href="#">{% trans 'Invoices' %}</a></li> -->
+                  <li>
+                    <a href="#">{% trans 'Profile Settings' %}</a>
+                  </li>
+                  <!-- <li><a href="reviews.html">{% trans 'Reviews' %}</a></li> -->
+                  <!-- <li class="active">
+							<a href="doctor-register.html">{% trans 'Doctor Register' %}</a>
+						  </li> -->
+                </ul>
+              </li>
+              <li class="has-submenu">
+                <a href="#">{% trans 'Patients' %}<i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                  <li><a href="{% url 'search'%}">{% trans 'Search Doctor' %}</a></li>
+                  <li>
+                    <a href="#">{% trans 'Doctor Profile' %}</a>
+                  </li>
+                  <li><a href="{% url 'booking'%}">{% trans 'Booking' %}</a></li>
+                  <!-- <li><a href="#">{% trans 'Checkout' %}</a></li> -->
+                  <li>
+                    <a href="{% url 'booking-success'%}">{% trans 'Booking Success' %}</a>
+                  </li>
+                  <li>
+                    <a href="#">{% trans 'Patient Dashboard' %}</a>
+                  </li>
+                  <!-- <li><a href="#">{% trans 'Favourites' %}</a></li> -->
+                  <!-- <li><a href="#">{% trans 'Chat' %}</a></li> -->
+                  <li>
+                    <a href="#">{% trans 'Profile Settings' %}</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'change-password'%}">{% trans 'Change Password' %}</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="{% url 'about-us'%}">{% trans 'About Us' %}</a>
+              </li>
+              <!-- <li class="has-submenu">
+						<a href="#">{% trans 'Pages' %}<i class="fas fa-chevron-down"></i></a>
+						<ul class="submenu">
+						  <li><a href="voice-call.html">{% trans 'Voice Call' %}</a></li>
+						  <li><a href="video-call.html">{% trans 'Video Call' %}</a></li>
+						  <li><a href="search.html">{% trans 'Search Doctors' %}</a></li>
+						  <li><a href="calendar.html">{% trans 'Calendar' %}</a></li>
+						  <li><a href="components.html">{% trans 'Components' %}</a></li>
+						  <li class="has-submenu">
+							<a href="invoices.html">{% trans 'Invoices' %}</a>
+							<ul class="submenu">
+							  <li><a href="invoices.html">{% trans 'Invoices' %}</a></li>
+							  <li><a href="invoice-view.html">{% trans 'Invoice View' %}</a></li>
+							</ul>
+						  </li>
+						  <li><a href="blank-page.html">{% trans 'Starter Page' %}</a></li>
+						  <li><a href="login.html">{% trans 'Login' %}</a></li>
+						  <li><a href="register.html">{% trans 'Register' %}</a></li>
+						  <li><a href="forgot-password.html">{% trans 'Forgot Password' %}</a></li>
+						</ul>
+					  </li> -->
+              <li>
+                <a href="{% url 'admin_login' %}" target="_blank">{% trans 'Admin' %}</a>
+              </li>
+              <li class="login-link">
+                <a href="{% url 'login' %}">{% trans 'Login / Signup' %}</a>
+              </li>
+            </ul>
+          </div>
+          <ul class="nav header-navbar-rht">
+            <li class="nav-item contact-item">
+              <div class="header-contact-img">
+                <i class="far fa-hospital"></i>
+              </div>
+              <div class="header-contact-detail">
+                <p class="contact-header">{% trans 'Contact' %}</p>
+                <p class="contact-info-header">{% trans '+880 1795087285' %}</p>
+              </div>
+            </li>
+            <!-- User Menu -->
+            <li class="nav-item dropdown has-arrow logged-item">
+              <a
+                href="#"
+                class="dropdown-toggle nav-link"
+                data-toggle="dropdown"
+              >
+                <span class="user-img">
+                  <img
+                    class="rounded-circle"
+                    src="{% static 'HealthStack-System/images/Normal/patients/patient.jpg' %}"
+                    width="31"
+                    alt="Richard Wilson"
+                  />
+                </span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <div class="user-header">
+                  <div class="avatar avatar-sm">
+                    <img
+                      src="{% static 'HealthStack-System/images/Normal/patients/patient.jpg' %}"
+                      alt="User Image"
+                      class="avatar-img rounded-circle"
+                    />
+                  </div>
+                  <div class="user-text">
+                    <h6>{% trans 'Richard Wilson' %}</h6>
+                    <p class="text-muted mb-0">{% trans 'Patient' %}</p>
+                  </div>
+                </div>
+                <a class="dropdown-item" href="#">{% trans 'Dashboard' %}</a>
+                <a class="dropdown-item" href="#">{% trans 'Profile Settings' %}</a>
+                <a class="dropdown-item" href="{% url 'hospital_home'%}"
+                  >{% trans 'Logout' %}</a
+                >
+              </div>
+            </li>
+            <!-- /User Menu -->
+          </ul>
+        </nav>
+      </header>
+      <!-- /Header -->
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb-bar">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+              <nav aria-label="breadcrumb" class="page-breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="index-2.html">{% trans 'Home' %}</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">{% trans 'Booking' %}</li>
+                </ol>
+              </nav>
+              <h2 class="breadcrumb-title">{% trans 'Booking' %}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Breadcrumb -->
+
+      <!-- Page Content -->
+      <div class="content success-page-cont">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <!-- Success Card -->
+              <div class="card success-card">
+                <div class="card-body">
+                  <div class="success-cont">
+                    <i class="fas fa-check"></i>
+                    <h3>{% trans 'Appointment booked Successfully!' %}</h3>
+                    <p>{% trans 'Appointment booked with' %}<strong>{% trans 'Dr. Darren Elder' %}</strong
+                      ><br />{% trans 'on' %}<strong>{% trans '12 Nov 2019 5:00PM to 6:00PM' %}</strong>
+                    </p>
+                    <a
+                      href="invoice-view.html"
+                      class="btn btn-primary view-inv-btn"
+                      >{% trans 'View Invoice' %}</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /Success Card -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Content -->
+
+      <!-- Footer -->
+      {% include 'footer.html' %}
+      <!-- /Footer -->
+    </div>
+    <!-- /Main Wrapper -->
+
+    <!-- jQuery -->
+    <script src="{% static 'HealthStack-System/js/Normal/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="{% static 'HealthStack-System/js/Normal/popper.min.js' %}"></script>
+    <script src="{% static 'HealthStack-System/js/Normal/bootstrap.min.js' %}"></script>
+
+    <!-- Custom JS -->
+    <script src="{% static 'HealthStack-System/Outside_assets/js/script.js' %}"></script>
+  </body>
+
+  <!-- doccure/booking-success.html  30 Nov 2019 04:12:16 GMT -->
+</html>

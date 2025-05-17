@@ -1,0 +1,109 @@
+{% load i18n %}
+{% load static %}
+
+<h2>Hello {{ values.name }},</h2>
+
+<p>{% trans 'Here is a receipt containing the payment details of your lab tests.' %}</p>
+
+<h2>{% trans 'Test Receipt' %}</h2>
+
+<h3 class="card-title">{% trans 'Payment Receipt' %}</h3>
+
+    <table style="border: 1px solid black">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black">{% trans 'Title' %}</th>
+                <th style="border: 1px solid black">{% trans 'Details' %}</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Patient Name' %}</td>
+                <td style="border: 1px solid black">{{ values.name }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Email' %}</td>
+                <td style="border: 1px solid black">{{ values.email }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Username' %}</td>
+                <td style="border: 1px solid black">{{ values.username }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Phone number' %}</td>
+                <td style="border: 1px solid black">{{ values.phone_number }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Transaction ID' %}</td>
+                <td style="border: 1px solid black">{{ values.tran_id }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Bank Transaction ID' %}</td>
+                <td style="border: 1px solid black">{{ values.bank_transaction_id }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Transaction Date' %}</td>
+                <td style="border: 1px solid black">{{ values.transaction_date }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Amount' %}</td>
+                <td style="border: 1px solid black">{{ values.currency_amount }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Card Type' %}</td>
+                <td style="border: 1px solid black">{{ values.card_type }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Card Issuer' %}</td>
+                <td style="border: 1px solid black">{{ values.card_issuer }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <br>
+
+    <h3 class="card-title">{% trans 'Lab tests' %}</h3>
+
+    <table style="border: 1px solid black">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black">{% trans 'Test ID' %}</th>
+                <th style="border: 1px solid black">{% trans 'Test Name' %}</th>
+                <th style="border: 1px solid black">{% trans 'Test Price' %}</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for i in values.order_cart %}
+            <tr>
+                <td style="border: 1px solid black">{{ i.item.test_info_id }}</td>
+                <td style="border: 1px solid black">{{ i.item.test_name }}</td>
+                <td style="border: 1px solid black">{{ i.item.test_info_price }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+
+
+<p>{% trans 'Thank you for your purchase.' %}</p>
+
+
+
+<p>{% trans 'Feel free to contact us for any inquiries.' %}</p>
+
+<p>{% trans 'Regards,' %}</p>
+<p>{% trans 'Admin' %}</p>
+

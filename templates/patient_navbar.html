@@ -1,0 +1,138 @@
+{% load i18n %}
+{% load static %}
+
+<nav class="navbar navbar-expand-lg header-nav">
+  <div class="navbar-header">
+    <a id="mobile_btn" href="javascript:void(0);">
+      <span class="bar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </a>
+    <a href="{% url 'hospital_home'%}" class="navbar-brand logo">
+      <img
+        src="{% static 'HealthStack-System/images/Normal/logo.jpg' %}"
+        class="img-fluid"
+        alt="Logo"
+      />
+    </a>
+  </div>
+  <div class="main-menu-wrapper">
+    <div class="menu-header">
+      <a href="" class="menu-logo">
+        <img
+          src="{% static 'HealthStack-System/images/Normal/logo.jpg' %}"
+          class="img-fluid"
+          alt="Logo"
+        />
+      </a>
+      <a id="menu_close" class="menu-close" href="javascript:void(0);">
+        <i class="fas fa-times"></i>
+      </a>
+    </div>
+    <ul class="main-nav">
+      <li>
+        <a href="{% url 'hospital_home'%}">{% trans 'Home' %}</a>
+      </li>
+
+      <li>
+        <a href="{% url 'patient-dashboard' %}">{% trans 'Dashboard' %}</a>
+      </li>
+
+      <li class="has-submenu">
+        <a href="#">{% trans 'Hospital' %}<i class="fas fa-chevron-down"></i></a>
+        <ul class="submenu">
+          <li><a href="{% url 'multiple-hospital' %}">{% trans 'Hospital Info' %}</a></li>
+          <li><a href="{% url 'search' %}">{% trans 'Search Doctor' %}</a></li>
+          
+          <!-- <li><a href="#">{% trans 'Checkout' %}</a></li> -->
+          <!-- <li>
+            <a href="">{% trans 'Booking Success' %}</a>
+          </li> -->
+          
+          <!-- <li><a href="#">{% trans 'Favourites' %}</a></li> -->
+          <!-- <li><a href="#">{% trans 'Chat' %}</a></li> -->
+        </ul>
+      </li>
+
+      {% if user.is_authenticated and user.is_patient %}
+      <li>
+        <a href="{% url 'chat-home' pk=user.id %}">{% trans 'Chat with Doctor' %}</a>
+      </li>
+      {% endif %}
+
+      <li>
+        <a href="{% url 'pharmacy_shop' %}">{% trans 'Medical Shop' %}</a>
+      </li>
+      <!-- <li class="has-submenu">
+                  <a href="#">{% trans 'Pages' %}<i class="fas fa-chevron-down"></i></a>
+                  <ul class="submenu">
+                    <li><a href="voice-call.html">{% trans 'Voice Call' %}</a></li>
+                    <li><a href="video-call.html">{% trans 'Video Call' %}</a></li>
+                    <li><a href="search.html">{% trans 'Search Doctors' %}</a></li>
+                    <li><a href="calendar.html">{% trans 'Calendar' %}</a></li>
+                    <li><a href="components.html">{% trans 'Components' %}</a></li>
+                    <li class="has-submenu">
+                      <a href="invoices.html">{% trans 'Invoices' %}</a>
+                      <ul class="submenu">
+                        <li><a href="invoices.html">{% trans 'Invoices' %}</a></li>
+                        <li><a href="invoice-view.html">{% trans 'Invoice View' %}</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="blank-page.html">{% trans 'Starter Page' %}</a></li>
+                    <li><a href="login.html">{% trans 'Login' %}</a></li>
+                    <li><a href="register.html">{% trans 'Register' %}</a></li>
+                    <li><a href="forgot-password.html">{% trans 'Forgot Password' %}</a></li>
+                  </ul>
+                </li> -->
+    </ul>
+  </div>
+  <ul class="nav header-navbar-rht">
+    <li class="nav-item contact-item">
+      <div class="header-contact-img">
+        <i class="far fa-hospital"></i>
+      </div>
+      <div class="header-contact-detail">
+        <p class="contact-header">{% trans 'Contact' %}</p>
+        <p class="contact-info-header">+880{{patient.phone_number}}</p>
+      </div>
+    </li>
+    <!-- User Menu -->
+    <li class="nav-item dropdown has-arrow logged-item">
+      <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+        <span class="user-img">
+          <img
+            class="rounded-circle"
+            src="{{patient.featured_image.url}}"
+            width="31"
+            alt="Richard Wilson"
+          />
+        </span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right">
+        <div class="user-header">
+          <div class="avatar avatar-sm">
+            <img
+              src="{{patient.featured_image.url}}"
+              alt="User Image"
+              class="avatar-img rounded-circle"
+            />
+          </div>
+          <div class="user-text">
+            <h6>{{patient.name}}</h6>
+            <p class="text-muted mb-0">{% trans 'Patient' %}</p>
+          </div>
+        </div>
+        <a class="dropdown-item" href="{% url 'patient-dashboard' %}"
+          >{% trans 'Dashboard' %}</a
+        >
+        <a class="dropdown-item" href="{% url 'profile-settings' %}"
+          >{% trans 'Profile Settings' %}</a
+        >
+        <a class="dropdown-item" href="{% url 'logout' %}">{% trans 'Logout' %}</a>
+      </div>
+    </li>
+    <!-- /User Menu -->
+  </ul>
+</nav>

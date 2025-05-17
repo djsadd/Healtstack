@@ -1,0 +1,69 @@
+{% load i18n %}
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title"> 
+                    <span>{% trans 'Menu' %}</span>
+                </li>
+                <li class=""> 
+                    <a href="{%url 'admin-dashboard' %}"><i class="fe fe-home"></i> <span>{% trans 'Dashboard' %}</span></a>
+                </li>
+                
+                <li class="submenu">
+                    <a href="#"><i class="fe fe-building"></i> <span>{% trans 'Hospitals' %}</span></a>
+                    <ul style="display:none;">
+                        <li><a href="{% url 'hospital-list' %}"><i class="fe fe-edit"></i> <span>{% trans 'Add Hospital' %}</span></a></li>
+                        <li><a href="{% url 'emergency' %}"><i class="fe fe-edit"></i> <span>{% trans 'Add Emergency Info' %}</span></a></li>
+                    </ul>
+                </li>
+
+                
+
+                <li class="submenu"> 
+                    <a href="#"><i class="fe fe-user-plus"></i> <span>{% trans 'Doctors' %}</span></a>
+                    <ul style="display:none;">
+                        <li><a href="{%url 'register-doctor-list'%}"><i class="fe fe-users"></i> <span>{% trans 'Registered' %}</span></a></li>
+                        <li><a href="{%url 'pending-doctor-list'%}"><i class="fe fe-users"></i> <span>{% trans 'Pending' %}</span></a></li>
+                    </ul>
+                </li>
+                
+                
+
+                <li class="submenu">
+                    <a href="#"><i class="fe fe-user"></i> <span>{% trans 'Lab Worker' %}</span></a>
+                    <ul style="display:none;">
+                        <li><a href="{% url 'add-lab-worker' %}"><i class="fe fe-user-plus"></i> <span>{% trans 'Add Lab Worker' %}</span></a></li>
+                        <li><a href="{% url 'lab-worker-list' %}"><i class="fe fe-users"></i> <span>{% trans 'View Lab Worker' %}</span></a></li>
+                    </ul>
+                </li>
+
+                <li class="submenu">
+                    <a href="#"><i class="fe fe-user"></i> <span>{% trans 'Pharmacist' %}</span></a>
+                    <ul style="display:none;">
+                        <li><a href="{% url 'add-pharmacist' %}"><i class="fe fe-user-plus"></i> <span>{% trans 'Add Pharmacist' %}</span></a></li>
+                        
+                        <li><a href="{%url 'pharmacist-list'%}"><i class="fe fe-users"></i> <span>{% trans 'View Pharmacist' %}</span></a></li>
+                    </ul>
+                </li>
+                
+                {% comment %} <li class="submenu">
+                    <a href="#"><i class="fe fe-document"></i> <span>{% trans 'Reports' %}</span></a>
+                    <ul style="display: none;">
+                        <li><a href="invoice-report.html">{% trans 'Invoice Reports' %}</a></li>
+                    </ul>
+                </li> {% endcomment %}
+
+                
+
+                
+                
+                <li> 
+                    <a href="{%url 'hospital-admin-profile' pk=user.id %}"><i class="fe fe-user-plus"></i> <span>{% trans 'Profile' %}</span></a>
+                </li>
+
+                
+            </ul>
+        </div>
+    </div>
+</div>

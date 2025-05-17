@@ -1,0 +1,42 @@
+{% load i18n %}
+<h1>{% trans 'Payment Success' %}</h1>
+
+<table>
+  <tr>
+    <td>{% trans 'Transaction ID' %}</td>
+    <td>{% trans 'Validation ID' %}</td>
+    <td>{% trans 'Amount' %}</td>
+    <td>{% trans 'Card Type' %}</td>
+    <td>{% trans 'Card No.' %}</td>
+    <td>{% trans 'Bank Transaction ID' %}</td>
+    <td>{% trans 'Status' %}</td>
+    <td>{% trans 'Transaction Date' %}</td>
+    <td>{% trans 'Currency' %}</td>
+    <td>{% trans 'Card Issuer' %}</td>
+    <td>{% trans 'Card Brand' %}</td>
+    <td>{% trans 'Card Issuer Country' %}</td>
+    <td>{% trans 'Currency Type' %}</td>
+    <td>{% trans 'Currency Amount' %}</td>
+  </tr>
+
+  <tr>
+    <td>{{payment_data.tran_id}}</td>
+    <td>{{payment_data.val_id}}</td>
+    <td>{{payment_data.amount}}</td>
+    <td>{{payment_data.card_type}}</td>
+    <td>{{payment_data.card_no}}</td>
+    <td>{{payment_data.bank_tran_id}}</td>
+    <td>{{payment_data.status}}</td>
+    <td>{{payment_data.tran_date}}</td>
+    <td>{{payment_data.currency}}</td>
+    <td>{{payment_data.card_issuer}}</td>
+    <td>{{payment_data.card_brand}}</td>
+    <td>{{payment_data.card_issuer_country}}</td>
+    <td>{{payment_data.currency_type}}</td>
+    <td>{{payment_data.currency_amount}}</td>
+  </tr>
+</table>
+
+<br>
+<hr>
+{{ response }}

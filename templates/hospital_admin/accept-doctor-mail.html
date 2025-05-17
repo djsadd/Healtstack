@@ -1,0 +1,51 @@
+{% load i18n %}
+{% load static %}
+
+<h2>Dear Dr. {{ values.doctor_name }},</h2>
+
+<p>{% trans 'Your registration has been accepted. Below are your appointment details.' %}</p>
+
+
+<h3 class="card-title">{% trans 'Doctor Registration' %}</h3>
+
+    <table style="border: 1px solid black">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black">{% trans 'Title' %}</th>
+                <th style="border: 1px solid black">{% trans 'Details' %}</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Doctor Name' %}</td>
+                <td style="border: 1px solid black">{{ values.doctor_name }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Email' %}</td>
+                <td style="border: 1px solid black">{{ values.doctor_email }}</td>
+            </tr>
+
+
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Hospital Department' %}</td>
+                <td style="border: 1px solid black">{{ values.doctor_department }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Specialization' %}</td>
+                <td style="border: 1px solid black">{{ values.doctor_specialization }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+     
+
+
+<p>{% trans 'Feel free to contact us for any inquiries.' %}</p>
+
+<p>{% trans 'Sincerely,' %}</p>
+<p>{% trans 'Admin' %}</p>
+

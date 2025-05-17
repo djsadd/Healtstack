@@ -1,0 +1,72 @@
+{% load i18n %}
+{% load static %}
+
+<h2>Hello {{ values.name }},</h2>
+
+<p>We are pleased to inform you that your appointment has been accepted by Doctor {{ values.doctor_name }}</p>
+
+<p>{% trans 'Here are details regarding your appointment' %}</p>
+
+<h3 class="card-title">{% trans 'Appointment Details' %}</h3>
+
+    <table style="border: 1px solid black">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black">{% trans 'Title' %}</th>
+                <th style="border: 1px solid black">{% trans 'Details' %}</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Patient Name' %}</td>
+                <td style="border: 1px solid black">{{ values.name }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Email' %}</td>
+                <td style="border: 1px solid black">{{ values.email }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Username' %}</td>
+                <td style="border: 1px solid black">{{ values.username }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Patient Serial Number' %}</td>
+                <td style="border: 1px solid black">{{ values.serial_number }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Doctor Name' %}</td>
+                <td style="border: 1px solid black">{{ values.doctor_name }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Appointment Serial No.' %}</td>
+                <td style="border: 1px solid black">{{ values.appointment_serial_num }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Appointment Date' %}</td>
+                <td style="border: 1px solid black">{{ values.appointment_date }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Appointment Time' %}</td>
+                <td style="border: 1px solid black">{{ values.appointment_time }}</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">{% trans 'Appointment Status' %}</td>
+                <td style="border: 1px solid black">{{ values.appointment_status }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+<p>{% trans 'Feel free to contact us for any inquiries.' %}</p>
+
+<p>{% trans 'Sincerely,' %}</p>
+<p>{% trans 'Admin' %}</p>
