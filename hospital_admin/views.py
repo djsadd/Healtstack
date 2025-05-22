@@ -30,6 +30,7 @@ from django.template.loader import render_to_string
 from django.http import HttpResponse
 from django.utils.html import strip_tags
 from .utils import searchMedicines
+from django.conf import settings
 
 # Create your views here.
 
