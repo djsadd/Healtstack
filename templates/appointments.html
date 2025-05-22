@@ -89,7 +89,7 @@
                 {% for app in appointments %}
                 <div class="appointment-list">
                   <div class="profile-info-widget">
-                    <a href="patient-profile.html" class="booking-doc-img">
+                    <a href="{%url 'patient-profile' pk=app.patient.patient_id%}" class="booking-doc-img">
                       <img
                         src="{{app.patient.featured_image.url}}"
                         alt="User Image"

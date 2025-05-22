@@ -35,7 +35,7 @@
         <!-- Notifications -->
         <li class="nav-item dropdown noti-dropdown">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <i class="fe fe-bell"></i> <span class="badge badge-pill">{% trans '3' %}</span>
+                <i class="fe fe-bell"></i> <span class="badge badge-pill">{{ user.technician.get_patient|length }}</span>
             </a>
             <div class="dropdown-menu notifications">
                 <div class="topnav-dropdown-header">
@@ -46,15 +46,21 @@
                     <ul class="notification-list">
                         <li class="notification-message">
                             <a href="#">
+
+
+                                {% for row in user.technician.get_patient %}
+                                <a href="{% url 'prescription-list' row.pk %}">
                                 <div class="media">
                                     <span class="avatar avatar-sm">
-                                        <img class="avatar-img rounded-circle" alt="User Image" src="assets/img/doctors/doctor-thumb-01.jpg">
+                                        <img class="avatar-img rounded-circle" alt="User Image" src="{{ row.featured_image.url }}">
                                     </span>
                                     <div class="media-body">
-                                        <p class="noti-details"><span class="noti-title">{% trans 'Dr. Ruby Perrin' %}</span>{% trans 'Schedule' %}<span class="noti-title">{% trans 'her appointment' %}</span></p>
+                                        <p class="noti-details"><span class="noti-title">{{ row.name }} </span>{% trans 'Schedule' %}<span class="noti-title"> {% trans 'her appointment' %}</span></p>
                                         <p class="noti-time"><span class="notification-time">{% trans '4 mins ago' %}</span></p>
                                     </div>
                                 </div>
+                                </a>
+                                {% endfor %}
                             </a>
                         </li>
                        

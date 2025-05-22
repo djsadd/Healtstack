@@ -980,6 +980,8 @@ def mypatient_list(request):
             lab_workers = Clinical_Laboratory_Technician.objects.get(user=request.user)
             #report= Report.objects.all()
             patient = Patient.objects.all()
+            print(patient)
+
             context = {'patient': patient,'lab_workers':lab_workers}
             return render(request, 'hospital_admin/mypatient-list.html',context)
 

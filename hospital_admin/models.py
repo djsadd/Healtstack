@@ -2,6 +2,7 @@ from django.db import models
 
 import hospital
 from hospital.models import User, Hospital_Information
+from hospital.models import Hospital_Information, User, Patient
 # from doctor.models import Doctor_Information
 
 
@@ -41,6 +42,11 @@ class Clinical_Laboratory_Technician(models.Model):
     
     def __str__(self):
         return str(self.user.username)
+
+    def get_patient(self):
+        patients = Patient.objects.all()
+        print("in models:", patients)
+        return patients
 
 
 
