@@ -33,7 +33,6 @@ from django.utils.encoding import force_bytes
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.views.decorators.csrf import csrf_exempt
-from django.conf import settings
 
 
 # Create your views here.
@@ -105,15 +104,6 @@ def resetPassword(request):
             html_message = render_to_string('mail_template.html', {'values': values})
             plain_message = strip_tags(html_message)
             
-            subject = "Healthstack"
-            send_mail(
-                subject,
-                plain_message,
-                settings.EMAIL_HOST_USER,  # <-- отправитель должен совпадать с EMAIL_HOST_USER
-                [patient_email],
-                html_message=html_message,
-                fail_silently=False
-            )  
 
     context = {'form': form}
     return render(request, 'reset_password.html', context)
