@@ -27,6 +27,7 @@
           alt="Logo"
         />
       </a> 
+      
       <a id="menu_close" class="menu-close" href="javascript:void(0);">
         <i class="fas fa-times"></i>
       </a>
@@ -36,8 +37,8 @@
         <a href="{% url 'hospital_home'%}" style="text-decoration: none;">{% trans 'Home' %}</a>
       </li>
 
-
       {% comment %}
+      
       {% if user.is_authenticated and user.is_doctor %}
       <li class="has-submenu active">
         <a href="#" style="text-decoration: none;">{% trans 'Doctors' %}<i class="fas fa-chevron-down"></i></a>
@@ -60,6 +61,7 @@
       {% endcomment %}
 
       {% comment %}
+      
       {% if user.is_authenticated and user.is_patient %}
       <li class="has-submenu">
         <a href="#">{% trans 'Patients' %}<i class="fas fa-chevron-down"></i></a>
@@ -83,7 +85,7 @@
       
       {% endif %}
       {% endcomment %}
-
+      
       {% if user.is_authenticated and user.is_patient %}
       <li><a href="{% url 'patient-dashboard' %}"style="text-decoration: none;">{% trans 'Patient Dashboard' %}</a></li>
       {% endif %}
@@ -111,6 +113,22 @@
       <li class="login-link">
         <a href="{% url 'login' %}">{% trans 'Login / Signup' %}</a>
       </li>
+          <li>
+    <div class="language-switcher-mobile" style="margin-top: 20px; padding: 10px;">
+      <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <select name="language" onchange="this.form.submit()" style="width: 100%; padding: 5px;">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% for lang in LANGUAGES %}
+            <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+              {{ lang.1 }}
+            </option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+</li>
     </ul>
   </div>
 
