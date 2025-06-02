@@ -6073,11 +6073,11 @@ home-image{
 		border-right: 0;
 	}
 	.chat-cont-right {
-		position: absolute;
+		/* position: absolute; */
 		right: -100%;
 		top: 0;
-		opacity: 0;
-		visibility: hidden;
+		/* opacity: 0; */
+		/* visibility: hidden; */
 	}
 	.chat-cont-right .chat-header {
 		justify-content: start;

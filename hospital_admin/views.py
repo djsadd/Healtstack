@@ -472,6 +472,14 @@ def generate_random_specimen():
     string_var = "#INV-" + string_var
     return string_var
 
+@login_required(login_url='admin_login')
+def generate_random_specimen():
+    N = 4
+    string_var = ""
+    string_var = ''.join(random.choices(string.digits, k=N))
+    string_var = "#INV-" + string_var
+    return string_var
+
 @login_required(login_url='admin-login')
 @csrf_exempt
 def create_report(request, pk):
@@ -545,9 +553,9 @@ def create_report(request, pk):
 
             html_message = render_to_string('hospital_admin/report-mail-delivery.html', {'values': values})
             plain_message = strip_tags(html_message)
+ 
 
-            subject = "Healthstack"
-
+            return redirect('mypatient-list')
 
         context = {'prescription':prescription,'lab_workers':lab_workers,'tests':tests}
         return render(request, 'hospital_admin/create-report.html',context)
