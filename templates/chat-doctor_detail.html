@@ -30,7 +30,13 @@
     	<script src="{% static 'js/bootstrap.min.js' %}"></script> {% endcomment %}
    	 	<script src="{% static 'js/script.js' %}"></script>
     	 
-		
+		<style>
+			@media only screen and (max-width: 991.98px) {
+				.chat-cont-left {
+					display: none;
+				}
+			}
+		</style>
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
@@ -115,8 +121,8 @@
 								
 								<div class="chat-cont-right">
 									<div class="chat-header">
-										<a id="back_user_list" href="javascript:void(0)" class="back-user-list">
-											<i class="material-icons">{% trans 'chevron_left' %}</i>
+										<a id="back_user_list" href="javascript:history.back()" class="back-user-list">
+											<i class="material-icons"><<<</i>
 										</a>
 										<div class="media">
 											<div class="media-img-wrap">

@@ -76,6 +76,8 @@ def home(request,pk):
                     "chat_id": int(request.GET['u'] if request.method == 'GET' and 'u' in request.GET else 0)
                 }
             print(request.GET['u'] if request.method == 'GET' and 'u' in request.GET else 0)
+            if request.method == 'GET' and 'u' in request.GET and request.GET['u']:
+                return render(request,"chat_detail_patient.html", context)
             return render(request,"chat.html",context)
     elif request.user.is_doctor:
             User = get_user_model()
@@ -132,6 +134,8 @@ def home(request,pk):
                     "chat_id": int(request.GET['u'] if request.method == 'GET' and 'u' in request.GET else 0)
                 }
             print(request.GET['u'] if request.method == 'GET' and 'u' in request.GET else 0)
+            if request.method == 'GET' and 'u' in request.GET and request.GET['u']:
+                return render(request,"chat-doctor_detail.html", context)
             return render(request,"chat-doctor.html",context)
 
 @csrf_exempt

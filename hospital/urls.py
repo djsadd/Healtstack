@@ -28,6 +28,7 @@ urlpatterns = [
     path('logout/', views.logoutUser, name='logout'),
     path('multiple-hospital/', views.multiple_hospital, name='multiple-hospital'),
     path('chat/<int:pk>/', views.chat, name='chat'),
+    path('chat-detail/<int:pk>/', views.chat_detail, name='chat'),
     path('chat-doctor/', views.chat_doctor, name='chat-doctor'),
     path('hospital-profile/<int:pk>/', views.hospital_profile, name='hospital-profile'),
     path('checkout-payment/', views.checkout_payment, name='checkout-payment'),

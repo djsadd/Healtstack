@@ -178,7 +178,7 @@
                                       >{{appointment.time}}</span
                                     >
                                   </td>
-                                  <td>{{appointment.appointment_type}}</td>
+                                  <td>{% trans 'checkup' %}</td>
                                   
                                   {% if appointment.appointment_type == 'checkup' %}
                                   <td>{{appointment.doctor.consultation_fee}} KZT</td>

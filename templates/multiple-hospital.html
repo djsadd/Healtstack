@@ -73,7 +73,7 @@
 							
 							<div class="top-nav-search">
 								<form action="{% url 'multiple-hospital' %}" method="GET">
-									<input type="text" class="form-control" placeholder="Search hospital" name="search_query" value="{{search_query}}">
+									<input type="text" class="form-control" placeholder="{% trans 'Search hospital' %}" name="search_query" value="{{search_query}}">
 									<button class="btn" type="submit"><i class="fa fa-search"></i></button>
 								</form>
 							</div>

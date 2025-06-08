@@ -589,7 +589,7 @@ msgstr "Сүйікті"
 #: .\templates\patient-sidebar.html:75 .\templates\privacy-policy.html:93
 #: .\templates\search-hospitals.html:144 .\templates\search-hospitals.html:383
 msgid "Change Password"
-msgstr "құпия сөзді өзгерту"
+msgstr "Құпия сөз өзгерту"
 
 #: ⁨.\backup templates\templates\Extras\blank-page.html⁩:75 ⁨.\backup
 #: templates\templates\Extras\calendar.html⁩:100
@@ -863,7 +863,7 @@ msgstr "Тіркеу"
 #: .\templates\patient_navbar.html:86 .\templates\privacy-policy.html:114
 #: .\templates\search-hospitals.html:169
 msgid "Forgot Password"
-msgstr "Мен парольді ұмытып қалдым"
+msgstr "Құпия соз умыттым"
 
 #: ⁨.\backup templates\templates\Extras\blank-page.html⁩:96 ⁨.\backup
 #: templates\templates\Extras\calendar.html⁩:121
@@ -2113,7 +2113,7 @@ msgstr "Негізгі қойындылар"
 #: .\templates\hospital_admin\profile.html:58
 #: .\templates\patient-profile.html:67
 msgid "Profile"
-msgstr "қырынан бейнелеу"
+msgstr "Профиль"
 
 #: .\templates\Extras\components.html:1204
 #: .\templates\Extras\components.html:1252
@@ -3201,7 +3201,7 @@ msgstr "Дәрігер"
 #: .\templates\Extras\social-media.html:222 .\templates\doctor-sidebar.html:67
 #: .\templates\my-patients.html:49 .\templates\my-patients.html:52
 msgid "My Patients"
-msgstr "Менің пациенттерім"
+msgstr "Менің науқастарым"
 
 #: .\templates\Extras\invoices.html:228 .\templates\Extras\reviews.html:228
 #: .\templates\Extras\social-media.html:228
@@ -3247,7 +3247,7 @@ msgstr "# pt0016"
 
 #: .\templates\Extras\invoices.html:310 .\templates\appointments.html:204
 msgid "$450"
-msgstr "450 АҚШ доллары"
+msgstr "450 тенге"
 
 #: .\templates\Extras\invoices.html:311
 msgid "14 Nov 2019"
@@ -3882,7 +3882,7 @@ msgstr "Тапсырысты орналастыруды бастаңыз"
 #: .\templates\reset_password_sent.html:75
 #: .\templates\search-hospitals.html:149
 msgid "About Us"
-msgstr "біз туралы"
+msgstr "Біз туралы"
 
 #: .\templates\Pharmacy\cart.html:164 .\templates\Pharmacy\checkout.html:264
 #: .\templates\Pharmacy\product-single.html:101
@@ -4511,7 +4511,7 @@ msgstr "Сөйлесулер"
 
 #: .\templates\chat-doctor.html:98 .\templates\chat.html:91
 msgid "Offline"
-msgstr "окшегі"
+msgstr "Оффлайн"
 
 #: .\templates\chat-doctor.html:120 .\templates\chat.html:114
 msgid "chevron_left"
@@ -4865,7 +4865,7 @@ msgstr "Жапсырылған"
 #: .\templates\hospital-department.html:126
 #: .\templates\multiple-hospital.html:132
 msgid "Explore"
-msgstr "зерттеу"
+msgstr "өту"
 
 #: .\templates\demo.html:307
 msgid "Square"
@@ -4893,7 +4893,7 @@ msgstr "Ертеңгі жазбалар"
 
 #: .\templates\doctor-dashboard.html:125
 msgid "Today Patient"
-msgstr "Бүгін, жазбалар"
+msgstr "Бүгінгі жазбалар"
 
 #: .\templates\doctor-dashboard.html:144
 msgid "Total Appoinments"
@@ -4948,11 +4948,11 @@ msgstr "Пайдаланушының аты"
 #: .\templates\doctor-login.html:106 .\templates\hospital_admin\login.html:72
 #: .\templates\patient-login.html:113
 msgid "Show Password"
-msgstr "Парольді көрсету"
+msgstr ""
 
 #: .\templates\doctor-login.html:112 .\templates\patient-login.html:120
 msgid "Forgot Password ?"
-msgstr "Парольді ұмыттыңыз ба?"
+msgstr ""
 
 #: .\templates\doctor-login.html:121 .\templates\hospital_admin\login.html:83
 #: .\templates\hospital_admin\register.html:63
@@ -4975,7 +4975,7 @@ msgstr "Әкімші?"
 
 #: .\templates\doctor-navbar.html:51
 msgid "Chat with Patients"
-msgstr "Пациенттермен байланысыңыз"
+msgstr "Науқастармен чат"
 
 #: .\templates\doctor-profile-settings.html:116
 msgid "Basic Information"
@@ -5227,7 +5227,7 @@ msgstr "Бірнеше аурухана"
 #: .\templates\hospital_admin\create-report.html:142
 #: .\templates\patient-sidebar.html:62
 msgid "Test Information"
-msgstr "Талдайды"
+msgstr "Талдау"
 
 #: .\templates\doctor-test-list.html:79
 #: .\templates\doctor-view-prescription.html:208
@@ -6353,18 +6353,17 @@ msgstr "Парольді ұмыттыңыз ба?"
 #: .\templates\hospital_admin\forgot-password.html:43
 #: .\templates\reset_password.html:118
 msgid "Enter your email to get a password reset link"
-msgstr ""
-"Құпия сөзді түсіру үшін сілтеме алу үшін электрондық поштаны енгізіңіз"
+msgstr "Құпия сөзді қалпына келтіру сілтемесін алу үшін электрондық поштаңызды енгізіңіз"
 
 #: .\templates\hospital_admin\forgot-password.html:51
 #: .\templates\reset.html:136 .\templates\reset_password.html:136
 msgid "Reset Password"
-msgstr "Парольді тастаңыз"
+msgstr "Құпия сөзді қалпына келтіру"
 
 #: .\templates\hospital_admin\forgot-password.html:56
 #: .\templates\reset_password.html:134
 msgid "Remember your password?"
-msgstr "Парольді есте сақтаңыз ба?"
+msgstr "Құпия сөзіңіз есіңізде ме?"
 
 #: .\templates\hospital_admin\hospital-admin-navbar.html:83
 #: .\templates\hospital_admin\invoice-report.html:160
@@ -7468,7 +7467,7 @@ msgstr "Аурухана туралы ақпарат"
 
 #: .\templates\patient_navbar.html:61
 msgid "Chat with Doctor"
-msgstr "Дәрігермен сөйлесу"
+msgstr "Дәрігермен чат"
 
 #: .\templates\payment_index.html:2
 msgid "Hello Payment Page"
@@ -7712,8 +7711,7 @@ msgstr "Пароль аяқталды"
 
 #: .\templates\reset_password_complete.html:122
 msgid "Your password has been set. You may go ahead and log in now."
-msgstr ""
-"Пароль орнатылды. Сіз одан әрі қарай жүріп, жүйені қазір енгізе аласыз."
+msgstr "Пароль орнатылды. Сіз одан әрі қарай жүріп, жүйені қазір енгізе аласыз."
 
 #: .\templates\reset_password_complete.html:128
 msgid "Go back to login"
@@ -7991,3 +7989,24 @@ msgstr "Қосымша ақпарат"
 #: .\templates\view-report.html:220
 msgid "Download Report"
 msgstr "Жүктеу туралы есеп"
+
+msgid "Consulation fee"
+msgstr "Кеңес беру ақысы"
+
+msgid "send message"
+msgstr "Хабарлама жазыңыз"
+
+msgid "Search doctor"
+msgstr "Дәрігерді іздеу"
+
+msgid "Here You can access multiple hospitals. You can book your appointment from your doctor & can collect all hospital infromations from here."
+msgstr "Мұнда бірнеше ауруханаға қол жеткізе аласыз. Дәрігерден қабылдауға жазылып, барлық ауруханалар туралы ақпаратты осы жерден ала аласыз."
+
+msgid "Search medicine"
+msgstr "Дәріні іздеу"
+
+msgid "Search hospital"
+msgstr "Ауруханы іздеу"
+
+msgid "Write your message here"
+msgstr "Хабарламаңызды осында жазыңыз"

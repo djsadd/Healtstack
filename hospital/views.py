@@ -124,6 +124,18 @@ def chat(request, pk):
     context = {'patient': patient, 'doctors': doctors}
     return render(request, 'chat.html', context)
 
+
+
+@csrf_exempt
+@login_required(login_url="login")
+def chat_detail(request, pk):
+    patient = Patient.objects.get(user_id=pk)
+    doctors = Doctor_Information.objects.all()
+
+    context = {'patient': patient, 'doctors': doctors}
+    return render(request, 'chat.html', context)
+
+
 @csrf_exempt
 @login_required(login_url="login")
 def chat_doctor(request):

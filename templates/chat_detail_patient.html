@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load static %}
-{% load tz%}
+{%load tz%}
 <!DOCTYPE html> 
 <html lang="en">
 	
@@ -26,16 +26,17 @@
 		<!-- Fancybox CSS -->
 		<link rel="stylesheet" href="{% static 'HealthStack-System/plugins/Normal/fancybox/jquery.fancybox.min.css'%}">
 		<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
-    	{% comment %} <script src="{% static 'js/popper.min.js' %}"></script>
-    	<script src="{% static 'js/bootstrap.min.js' %}"></script> {% endcomment %}
+    	
    	 	<script src="{% static 'js/script.js' %}"></script>
     	 
+		<style>
+			@media only screen and (max-width: 991.98px) {
+				.chat-cont-left {
+					display: none;
+				}
+			}
+		</style>
 		
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
 	
 	</head>
 	<body class="chat-page">
@@ -44,7 +45,7 @@
 		<div class="main-wrapper">
 		
 			<!-- Header -->
-			<header class="header">{% include 'doctor-navbar.html' %}</header>
+			<header class="header">{% include 'patient_navbar.html' %}</header>
 			<!-- /Header -->
 			
 			<!-- Page Content -->
@@ -53,13 +54,11 @@
 					<div class="row">
 						<div class="col-xl-12">
 							<div class="chat-window">
-							
-								<!-- Chat Left -->
 								<div class="chat-cont-left">
 									<div class="chat-header">
 										<span>{% trans 'Chats' %}</span>
-										<a href="javascript:void(0)" class="chat-compose">
-											<i class="material-icons"></i>
+										<a id="back_user_list" href="javascript:history.back()" class="back-user-list">
+											<i class="material-icons">chevron_left</i>
 										</a>
 									</div>
 									<form class="chat-search" method="GET" action = "{% url 'chat-home' pk=user.id %}">
@@ -72,63 +71,53 @@
 									</form>
 									<div class="chat-users-list">
 										<div class="chat-scroll">
-										{% for u in patient %} {% if not u.id == 1 and not u.id == user.id %}
-											<a href="{% url 'chat-home' pk=user.id %}?u={{u.user.id}}" class="media">
+
+										{% for d in doctor %} 
+										{% if not d.id == 1 and not d.id == user.id %}
+											<a href="{% url 'chat-home' pk=user.id %}?u={{d.user.id}}" class="media">
 												<div class="media-img-wrap">
-													{%if u.user.login_status%}
+													{%if d.user.login_status%}
 													<div class="avatar avatar-online">
-														<img src="{{ u.featured_image.url }}" alt="User Image" class="avatar-img rounded-circle">
+														<img src="{{ d.featured_image.url }}" alt="User Image" class="avatar-img rounded-circle">
 													</div>
 													{%else%}
 													<div class="avatar avatar-away">
-														<img src="{{ u.featured_image.url }}" alt="User Image" class="avatar-img rounded-circle">
+														<img src="{{ d.featured_image.url }}" alt="User Image" class="avatar-img rounded-circle">
 													</div>
 													{%endif%}
 												</div>
 												<div class="media-body">
 													<div>
-														<div class="user-name">{{u.name}}</div>
-														
-														<div>
-															<div class="user-name">{{d.name}}</div>
-															{%if u.user.login_status%}
-															<div class="user-last-chat">{% trans 'Online' %}</div>
-															{%else%}
-															<div class="user-last-chat">{% trans 'Offline' %}</div>
-															{%endif%}
-														</div>
+														<div class="user-name">{{d.name}}</div>
+														{%if d.user.login_status%}
+														<div class="user-last-chat">{% trans 'Online' %}</div>
+														{%else%}
+														<div class="user-last-chat">{% trans 'Offline' %}</div>
+														{%endif%}
 													</div>
 													<div>
-
-														<div class="last-chat-time block">{{u.serial_number}}</div>
-														<div class="badge badge-success badge-pill"></div>
+														
+														{% comment %} <div class="last-chat-time block">{% trans '2 min' %}</div>
+														<div class="badge badge-success badge-pill">{% trans '15' %}</div> {% endcomment %}
 													</div>
 												</div>
 											</a>
-										{%endif%}{% endfor %}
+										{%endif%}
+										{% endfor %}
 										</div>
 									</div>
 								</div>
-								<!-- /Chat Left -->
 							
 								<!-- Chat Right -->
 								
 								<div class="chat-cont-right">
 									<div class="chat-header">
-										<a id="back_user_list" href="javascript:void(0)" class="back-user-list">
-											<i class="material-icons">{% trans 'chevron_left' %}</i>
+											<!-- <a id="back_user_list" href="javascript:void(0)" class="back-user-list">
+												<i class="material-icons">{% trans 'chevron_left' %}</i>
+											</a> -->
+										<a id="back_user_list" href="javascript:history.back()" class="back-user-list">
+											<i class="material-icons"><<<</i>
 										</a>
-										<div class="media">
-											<div class="media-img-wrap">
-												<div class="avatar avatar-online">
-													<img src="{{doctor.featured_image.url}}" alt="User Image" class="avatar-img rounded-circle">
-												</div>
-											</div>
-											<div class="media-body">
-												<div class="user-name">{{doctor.name}}</div>
-												<div class="user-status">{% trans 'online' %}</div>
-											</div>
-										</div>
 										
 									</div>
 									{% if not chat_id > 0 %}
@@ -166,7 +155,7 @@
 												<li class="media received">
 													
 													<div class="avatar">
-														<img src="{{ pat.featured_image.url }}" alt="User Image" class="avatar-img rounded-circle">
+														<img src="{{ doc.featured_image.url }}" alt="User Image" class="avatar-img rounded-circle">
 													</div>
 													
 													<div class="media-body">
@@ -204,96 +193,18 @@
 												<input type="hidden" name="user_from" value="{{ user.id }}">
 												<input type="hidden" name="user_to" value="{{ chat_id }}">
 												<div class="col-md-10 h-100">
-													<textarea name="message" id="" class="h-100 w-100 form-control" placeholder="{% trans 'Write your message here' %}"></textarea>
+													<textarea name="message" id="" class="h-100 w-100 form-control" placeholder="{% trans 'send message' %}"></textarea>
 												</div>
 												<button class="button btn btn-rounded btn-info h-100 w-100 justify-content-center align-items-center d-flex"><i class="fab fa-telegram-plane"></i></button>
 											</form>
 										</div>
 									</div>
-									<!-- <div class="chat-footer">
-										<div class="input-group">
-											<form action="" id="chat-submit">
-											
-												<input type="hidden" name="user_from" value="{{ user.id }}">
-												<input type="hidden" name="user_to" value="{{ chat_id }}">	
-
-												<input type="text"  name="message" class="input-msg-send form-control" placeholder="Type something">
-											<div class="input-group-append">
-												<button class="btn msg-send-btn"><i class="fab fa-telegram-plane"></i></button>
-											</div>
-											</form>
-										</div>
-									</div> -->
+									
 									{% endif %}
 
-									<!-- <div class="col-md-8 h-100">
-										{% if not chat_id > 0 %}
-										<div class="h-100 d-flex flex-column justify-content-center align-items-center">
-											<h3>{% trans 'Start Chat now' %}</h3>
-											<p><small class="text-muted">{% trans 'Please select a person to chat with.' %}</small></p>
-										</div>
-										{% else%}
-										<div id="chat-box-field" class="h-100">
-											<div class="chat-box" style="height:80%">
-												{% for chat in chats %} 
-
-												{% if chat.user_from == user %}
-												<div class="p-2 w-100 d-flex justify-content-end">
-													<div class=" chat-bubble  ml-2 mb-2 bg-primary text-light rounded" data-id="{{chat.id}}">
-														<p>{{chat.message}}</p>
-														<div class="d-flex justify-content-between"><small>{% trans 'You' %}</small> <small>{{chat.date_created|date:"M-d-Y H:i"}}</small></div>
-													</div>
-												</div>
-												{% else %}
-
-												<div class="p-2 w-100 d-flex justify-content-start">
-													<div class="chat-bubble mr-2 mb-2 bg-light text-dark rounded" data-id="{{chat.id}}">
-														<p>{{chat.message}}</p>
-														<div class=" d-flex justify-content-between"><small>{% trans 'Sender' %}</small> <small>{{chat.date_created|date:"M-d-Y H:i"}}</small></div>
-													</div>
-												</div>
-												{% endif %}
-
-												{% endfor %}
-											</div>
-											<div class="chat-box-form border-top p-2" style="height:20%">
-												<div class="w-100 h-100">
-													<form action="" id="chat-submit" class="h-100 d-flex ">
-														<input type="hidden" name="user_from" value="{{ user.id }}">
-														<input type="hidden" name="user_to" value="{{ chat_id }}">
-														<div class="col-md-10 h-100">
-															<textarea name="message" id="" class="h-100 w-100 form-control" placeholder="Write your message here"></textarea>
-														</div>
-														<button class="button btn btn-primary h-100 w-100 justify-content-center align-items-center d-flex">{% trans 'SEND' %}</button>
-													</form>
-												</div>
-											</div>
-										</div>
-										{% endif %}
-									</div> -->
 									
-									<!-- <div class="chat-footer">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<div class="btn-file btn">
-													<i class="fa fa-paperclip"></i>
-													<input type="file">
-												</div>
-											</div>
-											<form action="" id="chat-submit" class="h-100 d-flex">
-											<input type="hidden" name="user_from" value="{{user.id}}">
-											<input type="hidden" name="user_from" value="{{chat_id}}">	
-											<input type="text" class="input-msg-send form-control" placeholder="Type something">
-											<div class="input-group-append">
-												<button name="message" type="button" class="btn msg-send-btn"><i class="fab fa-telegram-plane"></i></button>
-											</div>
-											</form>
-											
-											
-										</div>
-									</div> -->
-
-								</div>
+								</div> 
+								
 								<!-- /Chat Right -->
 								
 							</div>
@@ -316,7 +227,7 @@
 		<!-- <script src="{% static 'HealthStack-System/Outside_assets/js/script.js' %}"></script> -->
 		<script>
 			$(function() {
-				$('div.dataTables_length select').addClass('bg-dark')
+				$('div.dataTables_length select').addClass('text-dark')
 			})
 		</script>
 		<script>
@@ -345,7 +256,7 @@
 							if (typeof resp == "object" && resp.status == 'success') {
 								location.reload()
 							} else {
-								consol.log(resp)
+								console.log(resp)
 								alert('an error occured')
 							}
 						}
@@ -376,6 +287,7 @@
 						user_id: '{{user.id}}',
 						chat_id: '{{chat_id}}'
 					},
+												
 					dataType: 'json',
 					error: err => {
 						console.log(err)
@@ -385,7 +297,8 @@
 						if (Object.keys(resp).length > 0) {
 							Object.keys(resp).map(k => {
 								if (resp[k].id.user_from == '{{user.id}}') {
-									bubble = '<div class="chat-body">'+
+									bubble = 
+									'<div class="chat-body">'+
 										'<div class="chat-scroll chat-box">'+
 									'<ul class="list-unstyled">'+
 									'<li class="media sent">'+
@@ -404,18 +317,15 @@
 														'</div>'+
 														
 													'</div>'+
-												'</li>';
-								} else {   
-									bubble = '<div class="chat-body">'+
-												'<div class="chat-scroll chat-box">'+
-											'<ul class="list-unstyled">'+
-									
-											'<li class="media received">'+
-												'<div class="avatar">'+
-													'<img src="{{ pat.featured_image.url }}" alt="User Image" class="avatar-img rounded-circle">'+
-												'</div>'+
-											
-										
+												'</li>';                       
+								} else {
+									bubble =  '<div class="chat-body">'+
+										'<div class="chat-scroll chat-box">'+
+									'<ul class="list-unstyled">'+
+									'<li class="media received">'+
+													'<div class="avatar">'+
+														'<img src="{{ doc.featured_image.url }}" alt="User Image" class="avatar-img rounded-circle">'+
+													'</div>'+
 													'<div class="media-body">'+	
 														'<div class="msg-box">'+
 															'<div class="chat-bubble" data-id="' + resp[k].id + '">'+
@@ -431,10 +341,8 @@
 														'</div>'+
 														
 													'</div>'+
-												'</li>'+
-												'</ul>'+
-												'</div>'+
-												'</div>';
+												'</li>';
+												
 								}
 								// console.log(bubble)
 								$('.chat-box').append(bubble)
@@ -447,6 +355,8 @@
 				})
 			}
 		</script>
+		
+			
 	</body>
 
 <!-- doccure/chat.html  30 Nov 2019 04:12:18 GMT -->

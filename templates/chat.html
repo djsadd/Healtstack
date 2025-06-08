@@ -62,7 +62,7 @@
 											<div class="input-group-prepend">
 												<i class="fas fa-search"></i>
 											</div>
-											<input type="text" class="form-control" placeholder="Поиск" name="search">
+											<input type="text" class="form-control" placeholder="{% trans 'Search' %}" name="search">
 										</div>
 									</form>
 									<div class="chat-users-list">
@@ -198,7 +198,7 @@
 												<input type="hidden" name="user_from" value="{{ user.id }}">
 												<input type="hidden" name="user_to" value="{{ chat_id }}">
 												<div class="col-md-10 h-100">
-													<textarea name="message" id="" class="h-100 w-100 form-control" placeholder="Сообщение"></textarea>
+													<textarea name="message" id="" class="h-100 w-100 form-control" placeholder="{% trans 'send message' %}"></textarea>
 												</div>
 												<button class="button btn btn-rounded btn-info h-100 w-100 justify-content-center align-items-center d-flex"><i class="fab fa-telegram-plane"></i></button>
 											</form>

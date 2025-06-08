@@ -226,7 +226,7 @@
                         <i class="far fa-clock"></i> {{ doctor.visiting_hour }}
                       </li>
                       <li>
-                        <i class="far fa-money-bill-alt"></i> Плата за консультацию: {{ doctor.consultation_fee }} KZT
+                        <i class="far fa-money-bill-alt"></i> {% trans 'Consulation fee' %}: {{ doctor.consultation_fee }} KZT
                         <i
                           class="fas fa-info-circle"
                           data-toggle="tooltip"
@@ -264,8 +264,7 @@
             <div class="col-md-7">
               <div class="section-header">
                 <h2 class="mt-2">{% trans 'Availabe Hospitals' %}</h2>
-                <p>{% trans 'Here You can access multiple hospitals. You can book your appointment from
-                  your doctor & can collect all hospital infromations from here.' %}</p>
+                <p>{% trans 'Here You can access multiple hospitals. You can book your appointment from your doctor & can collect all hospital infromations from here.' %}</p>
               </div>
               <div class="features-slider slider">
                 <!-- Slider Item -->

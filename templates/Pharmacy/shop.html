@@ -54,7 +54,7 @@
           <div class="col-md-6 col-6 text-right">
             <div class="top-nav-search">
               <form action="{% url 'pharmacy_shop' %}" method="GET">
-                <input type="text" class="form-control" placeholder="Search medicine" name="search_query" value="{{search_query}}">
+                <input type="text" class="form-control" placeholder="{% trans 'Search medicine' %}" name="search_query" value="{{search_query}}">
               </form>
             </div>
           </div>
@@ -162,11 +162,7 @@
         <div class="col-lg-6 col-md-6 mb-5 mb-md-5">
           <div class="ftco-footer-widget mb-8">
             <h2 class="ftco-heading-2">{% trans 'About Us' %}</h2>
-            <p>{% trans 'Healthstack is an online based platform for multiple hospitals. 
-              It Provides immediate medical assistance to patients who require emergency treatment. 
-              Its Ability to track, monitor, and share a patient's health records between all hospitals
-              . Patients can also see information regarding multiple hospitals and doctors and make 
-              appointments online.' %}</p>
+            <p>{% trans "Healthstack is an online based platform for multiple hospitals. It Provides immediate medical assistance to patients who require emergency treatment. Its Ability to track, monitor, and share a patient's health records between all hospitals. Patients can also see information regarding multiple hospitals and doctors and make appointments online." %}</p>
 
           </div>
         </div>
