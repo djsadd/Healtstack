@@ -36,6 +36,16 @@
 			<script src="assets/js/html5shiv.min.js"></script>
 			<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+        <style>
+        .wrapper {
+
+
+            word-break: break-word;     /* Перенос длинных слов */
+            overflow-wrap: break-word;  /* Совместимость */
+            white-space: normal;        /* Разрешаем переносы */
+        }
+
+        </style>
     </head>
     <body>
 	
@@ -82,8 +92,10 @@
                                     <div class="patient-details">
                                         <h5 style="color: #757575;font-size: 18px;font-weight: normal;margin-bottom: 8px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><i class="fas fa-envelope"></i> {{doctor.email}}</h5>
                                         <h5 style="color: #757575;font-size: 18px;font-weight: normal;margin-bottom: 8px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><i class="fas fa-phone"></i> {{doctor.phone_number}}</h5>
-                                        <h5 style="color: #757575;font-size: 18px;font-weight: normal;margin-bottom: 8px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><i class="fas fa-brain"></i><span style="color:black"><b>{% trans 'Department:' %}</b></span> {{doctor.department_name}}</h5>
-                                        <h5 style="color: #757575;font-size: 18px;font-weight: normal;margin-bottom: 8px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><i class="fas fa-user-md"></i><span style="color:black"><b>{% trans 'Specialization:' %}</b></span> {{doctor.specialization}}</h5>
+                                        <div class="wrapper">
+                                            <h5 style="color: #757575;font-size: 18px;font-weight: normal;margin-bottom: 8px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><i class="fas fa-brain"></i><span style="color:black"><b>{% trans 'Department:' %}</b></span> <br>{{doctor.department_name}}</h5>
+                                        </div>
+                                        <h5 style="color: #757575;font-size: 18px;font-weight: normal;margin-bottom: 8px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><i class="fas fa-user-md"></i><span style="color:black"><b>{% trans 'Specialization:' %}</b></span><br> {{doctor.specialization}}</h5>
                                         
                                     </div>
                                 </div>

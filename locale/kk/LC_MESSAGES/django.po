@@ -3804,7 +3804,7 @@ msgstr "Дәріхана"
 #: .\templates\hospital_admin\labworker-sidebar.html:7
 #: .\templates\hospital_admin\pharmacist-sidebar.html:7
 msgid "Menu"
-msgstr "Дастархан мәзірі"
+msgstr "Мәзірі"
 
 #: .\templates\Pharmacy\cart.html:48 .\templates\Pharmacy\checkout.html:45
 msgid "Shop"
@@ -4114,7 +4114,7 @@ msgid ""
 "hospitals. Patients can also view information about various hospitals and "
 "providers and schedule appointments online."
 msgstr ""
-"RedchStack - бұл көптеген ауруханаларды қолдайтын Интернет-платформа. Ол "
+"HealthStack - бұл көптеген ауруханаларды қолдайтын Интернет-платформа. Ол "
 "жедел медициналық көмекке мұқтаж адамдарға шұғыл медициналық көмек ұсынады. "
 "Барлық ауруханаларда науқастың пациенттерін бақылау, бақылау және алмастыру "
 "мүмкіндігі. Сондай-ақ, пакранттар түрлі ауруханалар мен жеткізушілер туралы "
@@ -4147,7 +4147,7 @@ msgstr "+7768288748"
 #: .\templates\my-patients.html:98 .\templates\patient-profile.html:112
 #: .\templates\profile-settings.html:194
 msgid "Age"
-msgstr "фасыр"
+msgstr "жасы"
 
 #: .\templates\add-billing.html:211 .\templates\edit-billing.html:211
 msgid "38 Years, Male"
@@ -4507,7 +4507,7 @@ msgstr "Парольді растаңыз"
 
 #: .\templates\chat-doctor.html:61 .\templates\chat.html:55
 msgid "Chats"
-msgstr "Сөйлесулер"
+msgstr "Чаттар"
 
 #: .\templates\chat-doctor.html:98 .\templates\chat.html:91
 msgid "Offline"
@@ -5034,7 +5034,7 @@ msgstr "Туған жылы"
 #: .\templates\doctor-profile-settings.html:185
 #: .\templates\profile-settings.html:200
 msgid "NID"
-msgstr "Джин"
+msgstr "ЖСН"
 
 #: .\templates\doctor-profile-settings.html:191
 msgid "Visiting Hour"
@@ -5314,7 +5314,7 @@ msgstr "Рецепт қосулы"
 #: .\templates\doctor-view-prescription.html:146
 #: .\templates\prescription-view.html:127
 msgid "Addtress:"
-msgstr "айналу"
+msgstr "Мекенжайы:"
 
 #: .\templates\doctor-view-prescription.html:166
 #: .\templates\hospital_admin\medicine-list.html:73
@@ -5363,7 +5363,7 @@ msgstr "Науқас туралы ақпарат"
 #: .\templates\hospital_admin\invoice.html:337
 #: .\templates\prescription_pdf.html:105 .\templates\view-report.html:137
 msgid "Address:"
-msgstr "айналу"
+msgstr "Мекенжайы:"
 
 #: .\templates\doctor-view-report.html:160
 #: .\templates\hospital_admin\create-report.html:94
@@ -5420,12 +5420,10 @@ msgid ""
 "all hospitals. Patients can also see information regarding multiple "
 "hospitals and doctors and make appointments online."
 msgstr ""
-"RedchStack - бұл бірнеше ауруханалар үшін онлайн платформа. Бұл жедел "
-"медициналық көмек талап ететін пациенттерге жедел медициналық көмек "
-"көрсетеді. Ол пациенттің медициналық карталарын бақылауға, басқаруға және "
-"басқаруға барлық ауруханалар арасында бөлісе алады. Сондай-ақ, Пакитис "
-"бірнеше аурухана мен дәрігерлер туралы ақпаратты көре алады және "
-"Интернеттегі жиналыс болып тағайындалуы мүмкін."
+"Бұл қосымша — дәрігерге онлайн жазылуға және өз медициналық мәліметтерін басқаруға арналған."
+"Пайдаланушы тек өзіне ыңғайлы уақытты таңдайды, ал жүйе сол уақытқа сәйкес қабылдай алатын дәрігерді ұсынады."
+"Қосымша арқылы қабылдаулардың тарихын көруге, алдағы кездесулерді бақылауға және жеке мәліметтерді басқаруға болады."
+"Барлығы қарапайым, жылдам және ыңғайлы."
 
 #: .\templates\footer.html:70
 msgid "Dhanmondi,"
@@ -5433,7 +5431,7 @@ msgstr "Данмонда,"
 
 #: .\templates\footer.html:73 .\templates\navbar_home.html:125
 msgid "+880 1234 567890"
-msgstr "+880 1234 567890"
+msgstr "+7768288748"
 
 #: .\templates\footer.html:75
 msgid "HealthStack@gmail.com"
@@ -5672,7 +5670,7 @@ msgstr "Аурухана туралы ақпарат қосу"
 #: .\templates\hospital_admin\profile.html:183
 #: .\templates\profile-settings.html:188
 msgid "Address"
-msgstr "айналу"
+msgstr "Мекенжайы"
 
 #: .\templates\hospital_admin\add-hospital.html:196
 #: .\templates\hospital_admin\edit-hospital.html:217
@@ -6401,7 +6399,7 @@ msgstr "Электрондық пошта идентификаторы"
 #: .\templates\hospital_admin\profile.html:174
 #: .\templates\profile-settings.html:182
 msgid "Mobile"
-msgstr "жылжымалы"
+msgstr "Телефон номері"
 
 #: .\templates\hospital_admin\hospital-admin-profile.html:168
 #: .\templates\hospital_admin\profile.html:189
@@ -7203,7 +7201,7 @@ msgstr "Науқастардың тізімі"
 #: .\templates\hospital_admin\patient-list.html:86
 #: .\templates\profile-settings.html:206
 msgid "History"
-msgstr "қабат"
+msgstr "Тарих"
 
 #: .\templates\hospital_admin\pharmacist-dashboard.html:65
 msgid "Welcome Pharmacist!"
@@ -7295,7 +7293,7 @@ msgstr "Профильді қарау"
 
 #: .\templates\hospital_admin\register-doctor-list.html:104
 msgid "view"
-msgstr "Көзқарас"
+msgstr "қарау"
 
 #: .\templates\hospital_admin\reject-doctor-mail.html:6
 msgid "We regret to inform you that your rejected has been rejected."
@@ -7312,7 +7310,7 @@ msgstr "Есеп идентификаторы"
 
 #: .\templates\index-2.html:61
 msgid "Welcome To HealthStack"
-msgstr "RealmStack-қа қош келдіңіз"
+msgstr "HealthStack-қа қош келдіңіз"
 
 #: .\templates\index-2.html:62
 msgid "Choose well by choosing us."
@@ -7328,7 +7326,7 @@ msgstr "Сіз дәрігерлерді кез-келген ауруханада
 
 #: .\templates\index-2.html:267
 msgid "Availabe Hospitals"
-msgstr "Ауруханалар"
+msgstr "Емханалар"
 
 #: .\templates\ipn.html:2
 msgid "IPN"
